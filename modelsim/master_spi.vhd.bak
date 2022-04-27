@@ -1,0 +1,37 @@
+library work;
+use work.auxiliar.all;
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_signed.all;
+
+entity master_spi is
+port(nRst:             in     std_logic;
+     clk:              in     std_logic;
+
+     ena_rd:           in     std_logic;
+     dato_rd:          in     std_logic_vector(7 downto 0);
+
+     X_out_bias:       buffer std_logic_vector(10 downto 0);
+     Y_out_bias:       buffer std_logic_vector(10 downto 0);
+
+     muestra_bias_rdy: buffer std_logic);
+     
+end entity;
+
+architecture rtl of master_spi is
+  signal cnt_rd:          std_logic_vector(2+ceil_log(N) downto 0);
+
+
+begin
+  -- Contador de lecturas
+  process(nRst, clk)
+  begin
+    if nRst = '0' then
+
+    elsif clk'event and clk = '1' then
+
+    end if;
+  end process;
+
+end rtl;
